@@ -14,7 +14,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement adapters' (Protocol in workflow.md)
 
 ## Phase 3: Drift control and validation
-- [~] Task: Write a validation script to check adapter metadata matches SKILL.md version
+- [x] Task: Write a validation script to check adapter metadata matches SKILL.md version (c471faa)
 - [ ] Task: Add CI-friendly command to run validation
 - [ ] Task: Update README to document adapters and sync process
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Drift control and validation' (Protocol in workflow.md)
