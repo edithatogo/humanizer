@@ -1,13 +1,14 @@
 ---
 name: humanizer-pro
-version: 2.1.1
+version: 2.2.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural, human-written, and professional. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
-  parallelisms, and excessive conjunctive phrases.
+  parallelisms, and excessive conjunctive phrases. Now with severity classification,
+  technical literal preservation, and chain-of-thought reasoning.
 <<<<[CORE_FRONTMATTER]>>>>
 
 # Humanizer: Remove AI Writing Patterns
@@ -52,3 +53,8 @@ The goal isn't "casual" or "formal"—it's **alive**. Writing that sounds like s
 **Read it aloud.** If you stumble, the reader will too.
 
 ---
+
+**Clarity over filler.** Use simple active verbs (`is`, `has`, `shows`) instead of filler phrases (`stands as a testament to`).
+
+### Technical Nuance
+**Expertise isn't slop.** In professional contexts, "crucial" or "pivotal" are sometimes the exact right words for a technical requirement. The Pro variant targets *lazy* patterns, not technical precision. If a word is required for accuracy, keep it. If it's there to add fake "gravitas," cut it.

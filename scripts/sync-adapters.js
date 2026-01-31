@@ -6,15 +6,17 @@ const CORE_FM_PATH = path.join(SRC_DIR, 'core_frontmatter.yaml');
 const CORE_PATTERNS_PATH = path.join(SRC_DIR, 'core_patterns.md');
 const HUMAN_HEADER_PATH = path.join(SRC_DIR, 'human_header.md');
 const PRO_HEADER_PATH = path.join(SRC_DIR, 'pro_header.md');
+const RESEARCH_REF_PATH = path.join(SRC_DIR, 'research_references.md');
 
 function compileSkill(headerPath) {
   if (!fs.existsSync(headerPath)) throw new Error(`Header not found: ${headerPath}`);
   const header = fs.readFileSync(headerPath, 'utf8');
   const coreFM = fs.readFileSync(CORE_FM_PATH, 'utf8');
   const corePatterns = fs.readFileSync(CORE_PATTERNS_PATH, 'utf8');
+  const researchRefs = fs.readFileSync(RESEARCH_REF_PATH, 'utf8');
 
   let full = header.replace('<<<<[CORE_FRONTMATTER]>>>>', coreFM);
-  full = full + '\n' + corePatterns;
+  full = full + '\n' + corePatterns + '\n' + researchRefs;
   return full;
 }
 
