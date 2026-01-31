@@ -26,7 +26,7 @@ cp SKILL.md ~/.claude/skills/humanizer/
 
 In Claude Code, invoke the skill:
 
-```
+```text
 /humanizer
 
 [paste your text here]
@@ -34,7 +34,7 @@ In Claude Code, invoke the skill:
 
 Or ask Claude to humanize text directly:
 
-```
+```text
 Please humanize this text: [your text]
 ```
 
@@ -80,18 +80,21 @@ Copy the content of `adapters/copilot/COPILOT.md` to your Copilot custom instruc
 
 When `SKILL.md` is updated, run the sync script to propagate changes to all adapters:
 
-1.  **Sync:**
-    *   PowerShell: `scripts/sync-adapters.ps1`
-    *   CMD: `scripts/sync-adapters.cmd`
+1. **Sync:**
+    - Python: `python scripts/sync_adapters.py`
+    - PowerShell: `scripts/sync-adapters.ps1`
+    - CMD: `scripts/sync-adapters.cmd`
     *(This copies the core skill content to the Antigravity adapter and updates version metadata files)*
 
-2.  **Validate:**
-    *   PowerShell: `scripts/validate-adapters.ps1`
-    *   CMD: `scripts/validate-adapters.cmd`
+2. **Validate:**
+    - Python: `python scripts/validate_adapters.py`
+    - PowerShell: `scripts/validate-adapters.ps1`
+    - CMD: `scripts/validate-adapters.cmd`
 
-3.  **Install:**
-    *   PowerShell: `scripts/install-adapters.ps1`
-    *   CMD: `scripts/install-adapters.cmd`
+3. **Install:**
+    - Python: `python scripts/install_adapters.py`
+    - PowerShell: `scripts/install-adapters.ps1`
+    - CMD: `scripts/install-adapters.cmd`
     *(This automatically places all adapter files into their respective local/workspace directories)*
 
 ## Overview

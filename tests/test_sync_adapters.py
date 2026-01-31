@@ -101,4 +101,3 @@ def test_main_error(
     main()
 
     assert "Error: Test Error" in caplog.text
-

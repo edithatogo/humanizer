@@ -39,10 +39,10 @@ adapter_metadata:
 
 "@
 
-# Combine frontmatter with source content (stripping source frontmatter if needed, 
+# Combine frontmatter with source content (stripping source frontmatter if needed,
 # but usually Antigravity is okay with double frontmatter or we can strip the first one.
-# For simplicity and correctness, let's keep the source as is, just prepending our metadata 
-# block as a comment or separate block if supported. 
+# For simplicity and correctness, let's keep the source as is, just prepending our metadata
+# block as a comment or separate block if supported.
 # However, standard markdown parsers might get confused by two YAML blocks.
 # Let's check if the source has a YAML block.
 if ($sourceContent.StartsWith("---")) {

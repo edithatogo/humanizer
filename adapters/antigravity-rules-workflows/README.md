@@ -16,9 +16,11 @@ The canonical rules live in `SKILL.md`.
 ## Installation
 
 ### Rules (Always-on)
+
 Copy `rules/humanizer.md` to your Antigravity rules directory (e.g., `~/.antigravity/rules/` or workspace `.agent/rules/`).
 
 ### Workflows (User-triggered)
+
 Copy `workflows/humanize.md` to your Antigravity workflows directory (e.g., `~/.antigravity/workflows/` or workspace `.agent/workflows/`).
 
 ## Usage

@@ -128,4 +128,3 @@ def test_main_source_not_found(
         assert excinfo.value.code == 1
 
     assert "Error: Missing file" in caplog.text
-

@@ -114,8 +114,9 @@ def test_main_gemini_missing(
     # Return False for source_gemini.exists()
     mock_exists.return_value = False
 
-    with patch("sys.argv", ["install_adapters.py", "--skip-validation"]), patch(
-        "scripts.install_adapters.install_file"
+    with (
+        patch("sys.argv", ["install_adapters.py", "--skip-validation"]),
+        patch("scripts.install_adapters.install_file"),
     ):
         main()
 

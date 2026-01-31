@@ -37,7 +37,8 @@ When given text to humanize:
 
 Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Good writing has a human behind it.
 
-### Signs of soulless writing (even if technically "clean"):
+### Signs of soulless writing (even if technically "clean")
+
 - Every sentence is the same length and structure
 - No opinions, just neutral reporting
 - No acknowledgment of uncertainty or mixed feelings
@@ -45,7 +46,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 - No humor, no edge, no personality
 - Reads like a Wikipedia article or press release
 
-### How to add voice:
+### How to add voice
 
 **Have opinions.** Don't just report facts - react to them. "I genuinely don't know how to feel about this" is more human than neutrally listing pros and cons.
 
@@ -59,10 +60,12 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 **Be specific about feelings.** Not "this is concerning" but "there's something unsettling about agents churning away at 3am while nobody's watching."
 
-### Before (clean but soulless):
+### Before (clean but soulless)
+>
 > The experiment produced interesting results. The agents generated 3 million lines of code. Some developers were impressed while others were skeptical. The implications remain unclear.
 
-### After (has a pulse):
+### After (has a pulse)
+>
 > I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle - but I keep thinking about those agents working through the night.
 
 ---
@@ -262,6 +265,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Problem:** AI outputs lists where items start with bolded headers followed by colons.
 
 **Before:**
+>
 > - **User Experience:** The user experience has been significantly improved with a new interface.
 > - **Performance:** Performance has been enhanced through optimized algorithms.
 > - **Security:** Security has been strengthened with end-to-end encryption.
@@ -276,9 +280,11 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Problem:** AI chatbots capitalize all main words in headings.
 
 **Before:**
+
 > ## Strategic Negotiations And Global Partnerships
 
 **After:**
+
 > ## Strategic negotiations and global partnerships
 
 ---
@@ -356,6 +362,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 ### 22. Filler Phrases
 
 **Before → After:**
+
 - "In order to achieve this goal" → "To achieve this"
 - "Due to the fact that it was raining" → "Because it was raining"
 - "At this point in time" → "Now"
@@ -405,6 +412,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 ## Output Format
 
 Provide:
+
 1. The rewritten text
 2. A brief summary of changes made (optional, if helpful)
 
@@ -441,6 +449,7 @@ Provide:
 > None of this means the tools are useless. It means they are tools. They do not replace judgment, and they do not eliminate the need for tests. If you do not have tests, you cannot tell whether the suggestion is right.
 
 **Changes made:**
+
 - Removed chatbot artifacts ("Great question!", "I hope this helps!", "Let me know if...")
 - Removed significance inflation ("testament", "pivotal moment", "evolving landscape", "vital role")
 - Removed promotional language ("groundbreaking", "nestled", "seamless, intuitive, and powerful")
