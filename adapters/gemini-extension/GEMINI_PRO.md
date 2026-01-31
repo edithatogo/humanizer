@@ -8,6 +8,7 @@ adapter_metadata:
   adapter_format: Gemini extension
 ---
 
+
 ---
 name: humanizer-pro
 version: 2.1.1

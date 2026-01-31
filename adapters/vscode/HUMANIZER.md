@@ -8,6 +8,7 @@ adapter_metadata:
   adapter_format: VSCode markdown
 ---
 
+
 ---
 name: humanizer
 version: 2.1.1

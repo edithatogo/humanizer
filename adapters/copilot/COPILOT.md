@@ -8,6 +8,7 @@ adapter_metadata:
   adapter_format: Copilot instructions
 ---
 
+
 ---
 name: humanizer
 version: 2.1.1

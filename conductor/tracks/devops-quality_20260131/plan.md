@@ -17,6 +17,7 @@
 - [x] Task: Conductor - Agent Verification 'Phase 2: Testing & Coverage' (f2806c8)
 
 ## Phase 3: Pre-commit & Prose Linting [checkpoint: 2f63a6f]
+
 - [x] Task: Configure `.pre-commit-config.yaml` with Ruff, Mypy, and Markdownlint (5067d34)
 - [x] Task: Conductor - Agent Verification 'Phase 3: Pre-commit & Prose Linting' (2f63a6f)
 

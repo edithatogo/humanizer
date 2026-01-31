@@ -32,4 +32,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ## [x] Track: Build multi-agent Humanizer adapters (Codex CLI, Gemini CLI, Google Antigravity, VS Code) while keeping SKILL.md canonical and unchanged (e2c47dc)
 
-*Link: [./conductor/tracks/humanizer-adapters_20260125/](./conductor/tracks/humanizer-adapters_20260125/)*
+## [ ] Track: Adopt upstream pull requests #3, #4, and #5 from blader/humanizer
+
+*Link: [./conductor/tracks/adopt-upstream-prs_20260131/](./conductor/tracks/adopt-upstream-prs_20260131/)*

@@ -8,6 +8,7 @@ adapter_metadata:
   adapter_format: Qwen CLI context
 ---
 
+
 ---
 name: humanizer
 version: 2.1.1
