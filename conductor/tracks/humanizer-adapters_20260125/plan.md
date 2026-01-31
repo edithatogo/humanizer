@@ -13,7 +13,7 @@
 - [x] Task: Add Google Antigravity adapter (workflow wrapper) (aebfe47)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement adapters' (Protocol in workflow.md)
 
-## Phase 3: Drift control and validation
+## Phase 3: Drift control and validation [checkpoint: 389219d]
 - [x] Task: Write a validation script to check adapter metadata matches SKILL.md version (c471faa)
 - [x] Task: Add CI-friendly command to run validation (8598be2)
 - [x] Task: Update README to document adapters and sync process (158babb)
