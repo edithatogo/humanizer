@@ -36,6 +36,22 @@ Or ask Claude to humanize text directly:
 Please humanize this text: [your text]
 ```
 
+## Adapters (Multi-Agent)
+
+`SKILL.md` remains the canonical source of truth. These adapters provide thin wrappers for other environments:
+
+- Codex CLI: `AGENTS.md`
+- Gemini CLI: `adapters/gemini-extension/`
+- Google Antigravity (skill): `adapters/antigravity-skill/`
+- VS Code: `adapters/vscode/`
+
+### Sync Process
+
+1. Update adapter metadata blocks to match `SKILL.md` version and `last_synced` date.
+2. Run validation:
+   - PowerShell: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-adapters.ps1`
+   - Windows CMD: `scripts/validate-adapters.cmd`
+
 ## Overview
 
 Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) guide, maintained by WikiProject AI Cleanup. This comprehensive guide comes from observations of thousands of instances of AI-generated text.
