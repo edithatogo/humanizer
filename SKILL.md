@@ -1,13 +1,13 @@
 ---
 name: humanizer
-version: 2.1.1
+version: 2.2.0
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
   text to make it sound more natural and human-written. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
-  parallelisms, and excessive conjunctive phrases.
+  parallelisms, and filler phrases.
 allowed-tools:
   - Read
   - Write
@@ -42,7 +42,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 - Every sentence is the same length and structure
 - No opinions, just neutral reporting
 - No acknowledgment of uncertainty or mixed feelings
-- No first-person perspective when appropriate
+- No first-person perspective
 - No humor, no edge, no personality
 - Reads like a Wikipedia article or press release
 
@@ -50,7 +50,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 **Have opinions.** Don't just report facts - react to them. "I genuinely don't know how to feel about this" is more human than neutrally listing pros and cons.
 
-**Vary your rhythm.** Short punchy sentences. Then longer ones that take their time getting where they're going. Mix it up.
+**Vary your rhythm.** Short, punchy sentences. Then longer ones that take their time getting where they're going. Mix it up.
 
 **Acknowledge complexity.** Real humans have mixed feelings. "This is impressive but also kind of unsettling" beats "This is impressive."
 
@@ -66,7 +66,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ### After (has a pulse)
 >
-> I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle - but I keep thinking about those agents working through the night.
+> I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds; half are explaining why it doesn't count. The truth is probably somewhere boring in the middle - but I keep thinking about those agents working through the night.
 
 ---
 
@@ -191,7 +191,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 **Problem:** Constructions like "Not only...but..." or "It's not just about..., it's..." are overused.
 
 **Before:**
-> It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
+> It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song; it's a statement.
 
 **After:**
 > The heavy beat adds to the aggressive tone.
@@ -315,9 +315,21 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
+### 19. Primary Single Quotes (Code-Style Quotation)
+
+**Problem:** AI models trained on code often use single quotes as primary delimiters.
+
+**Before:**
+> stated, 'This is a pattern.'
+
+**After:**
+> stated, "This is a pattern."
+
+---
+
 ## COMMUNICATION PATTERNS
 
-### 19. Collaborative Communication Artifacts
+### 20. Collaborative Communication Artifacts
 
 **Words to watch:** I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 
@@ -331,7 +343,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 20. Knowledge-Cutoff Disclaimers
+### 21. Knowledge-Cutoff Disclaimers
 
 **Words to watch:** as of [date], Up to my last training update, While specific details are limited/scarce..., based on available information...
 
@@ -345,7 +357,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 21. Sycophantic/Servile Tone
+### 22. Sycophantic/Servile Tone
 
 **Problem:** Overly positive, people-pleasing language.
 
@@ -359,7 +371,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## FILLER AND HEDGING
 
-### 22. Filler Phrases
+### 23. Filler Phrases
 
 **Before → After:**
 
@@ -372,7 +384,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 23. Excessive Hedging
+### 24. Excessive Hedging
 
 **Problem:** Over-qualifying statements.
 
@@ -384,7 +396,7 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ---
 
-### 24. Generic Positive Conclusions
+### 25. Generic Positive Conclusions
 
 **Problem:** Vague upbeat endings.
 
@@ -423,7 +435,7 @@ Provide:
 **Before (AI-sounding):**
 > Great question! Here is an essay on this topic. I hope this helps!
 >
-> AI-assisted coding serves as an enduring testament to the transformative potential of large language models, marking a pivotal moment in the evolution of software development. In today's rapidly evolving technological landscape, these groundbreaking tools—nestled at the intersection of research and practice—are reshaping how engineers ideate, iterate, and deliver, underscoring their vital role in modern workflows.
+> The new software update serves as a testament to the company's commitment to innovation. Moreover, it provides a seamless, intuitive, and powerful user experience—ensuring that users can accomplish their goals efficiently. It's not just an update; it's a revolution in how we think about productivity. Industry experts believe this will have a lasting impact on the entire sector, highlighting the company's pivotal role in the evolving technological landscape.
 >
 > At its core, the value proposition is clear: streamlining processes, enhancing collaboration, and fostering alignment. It's not just about autocomplete; it's about unlocking creativity at scale, ensuring that organizations can remain agile while delivering seamless, intuitive, and powerful experiences to users. The tool serves as a catalyst. The assistant functions as a partner. The system stands as a foundation for innovation.
 >

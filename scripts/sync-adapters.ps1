@@ -112,4 +112,30 @@ if (Test-Path $copilotPath) {
     Write-Warning "$copilotPath not found."
 }
 
+# 7. Sync Codex CLI Adapter (AGENTS.md)
+$agentsPath = "AGENTS.md"
+Write-Host "Updating metadata in $agentsPath..."
+if (Test-Path $agentsPath) {
+    $agentsContent = Get-Content -Path $agentsPath -Raw
+    $agentsContent = $agentsContent -replace 'skill_version:.*', "skill_version: $version"
+    $agentsContent = $agentsContent -replace 'last_synced:.*', "last_synced: $today"
+    Set-Content -Path $agentsPath -Value $agentsContent -NoNewline
+    Write-Host "Updated $agentsPath"
+} else {
+    Write-Warning "$agentsPath not found."
+}
+
+# 8. Sync VS Code Adapter (HUMANIZER.md)
+$vscodePath = "adapters/vscode/HUMANIZER.md"
+Write-Host "Updating metadata in $vscodePath..."
+if (Test-Path $vscodePath) {
+    $vscodeContent = Get-Content -Path $vscodePath -Raw
+    $vscodeContent = $vscodeContent -replace 'skill_version:.*', "skill_version: $version"
+    $vscodeContent = $vscodeContent -replace 'last_synced:.*', "last_synced: $today"
+    Set-Content -Path $vscodePath -Value $vscodeContent -NoNewline
+    Write-Host "Updated $vscodePath"
+} else {
+    Write-Warning "$vscodePath not found."
+}
+
 Write-Host "Sync Complete."

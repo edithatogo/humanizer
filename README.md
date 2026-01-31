@@ -68,7 +68,7 @@ Copy the content of `adapters/copilot/COPILOT.md` to your Copilot custom instruc
 
 `SKILL.md` remains the canonical source of truth. These adapters provide thin wrappers for other environments:
 
-- Codex CLI: `AGENTS.md`
+- Global Agent Manifest: `AGENTS.md`
 - Gemini CLI: `adapters/gemini-extension/`
 - Google Antigravity (skill): `adapters/antigravity-skill/`
 - Google Antigravity (rules/workflows): `adapters/antigravity-rules-workflows/`
@@ -105,7 +105,7 @@ Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikip
 
 > "LLMs use statistical algorithms to guess what should come next. The result tends toward the most statistically likely result that applies to the widest variety of cases."
 
-## 24 Patterns Detected (with Before/After Examples)
+## 25 Patterns Detected (with Before/After Examples)
 
 ### Content Patterns
 
@@ -139,22 +139,27 @@ Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikip
 | 16 | **Title Case Headings** | "Strategic Negotiations And Partnerships" | "Strategic negotiations and partnerships" |
 | 17 | **Emojis** | "🚀 Launch Phase: 💡 Key Insight:" | Remove emojis |
 | 18 | **Curly quotes** | `said “the project”` | `said "the project"` |
+| 19 | **Primary Single Quotes** | `stated, 'This is a pattern.'` | `stated, "This is a pattern."` |
+
+### Global Agent Context
+
+AI agents (Claude Code, Cursor, Windsurf, etc.) should use [AGENTS.md](file:///c:/Users/60217257/repos/humanizer/AGENTS.md) for repository orientation and core instructions.
 
 ### Communication Patterns
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 19 | **Chatbot artifacts** | "I hope this helps! Let me know if..." | Remove entirely |
-| 20 | **Cutoff disclaimers** | "While details are limited in available sources..." | Find sources or remove |
-| 21 | **Sycophantic tone** | "Great question! You're absolutely right!" | Respond directly |
+| 20 | **Chatbot artifacts** | "I hope this helps! Let me know if..." | Remove entirely |
+| 21 | **Cutoff disclaimers** | "While details are limited in available sources..." | Find sources or remove |
+| 22 | **Sycophantic tone** | "Great question! You're absolutely right!" | Respond directly |
 
 ### Filler and Hedging
 
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
-| 22 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
-| 23 | **Excessive hedging** | "could potentially possibly" | "may" |
-| 24 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
+| 23 | **Filler phrases** | "In order to", "Due to the fact that" | "To", "Because" |
+| 24 | **Excessive hedging** | "could potentially possibly" | "may" |
+| 25 | **Generic conclusions** | "The future looks bright" | Specific plans or facts |
 
 ## Full Example
 
@@ -163,9 +168,8 @@ Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikip
 >
 > AI-assisted coding serves as an enduring testament to the transformative potential of large language models, marking a pivotal moment in the evolution of software development. In today's rapidly evolving technological landscape, these groundbreaking tools—nestled at the intersection of research and practice—are reshaping how engineers ideate, iterate, and deliver, underscoring their vital role in modern workflows.
 >
-> At its core, the value proposition is clear: streamlining processes, enhancing collaboration, and fostering alignment. It's not just about autocomplete; it's about unlocking creativity at scale, ensuring that organizations can remain agile while delivering seamless, intuitive, and powerful experiences to users. The tool serves as a catalyst. The assistant functions as a partner. The system stands as a foundation for innovation.
->
-> Industry observers have noted that adoption has accelerated from hobbyist experiments to enterprise-wide rollouts, from solo developers to cross-functional teams. The technology has been featured in The New York Times, Wired, and The Verge. Additionally, the ability to generate documentation, tests, and refactors showcases how AI can contribute to better outcomes, highlighting the intricate interplay between automation and human judgment.
+> At its core, the value proposition is clear: streamlining processes, enhancing collaboration, and fostering alignment. It's not just about autocomplete; it's about unlocking; The new software update serves as a testament to the company's commitment to innovation. Moreover, it provides a seamless, intuitive, and powerful user experience—ensuring that users can accomplish their goals efficiently. It's not just an update; it's a revolution in how we think about productivity. Industry experts believe this will have a lasting impact on the entire sector, highlighting the company's pivotal role in the evolving technological landscape.
+tion has accelerated from hobbyist experiments to enterprise-wide rollouts, from solo developers to cross-functional teams. The technology has been featured in The New York Times, Wired, and The Verge. Additionally, the ability to generate documentation, tests, and refactors showcases how AI can contribute to better outcomes, highlighting the intricate interplay between automation and human judgment.
 >
 > - 💡 **Speed:** Code generation is significantly faster, reducing friction and empowering developers.
 > - 🚀 **Quality:** Output quality has been enhanced through improved training, contributing to higher standards.
@@ -193,6 +197,8 @@ Based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikip
 
 ## Version History
 
+- **2.2.0** - Added Pattern #19 (Primary Single Quotes)
+- **2.1.2** - Fixed YAML description (replaced "excessive conjunctive phrases" with "filler phrases")
 - **2.1.1** - Fixed pattern #18 example (curly quotes vs straight quotes)
 - **2.1.0** - Added before/after examples for all 24 patterns
 - **2.0.0** - Complete rewrite based on raw Wikipedia article content
