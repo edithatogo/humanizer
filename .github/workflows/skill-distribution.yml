@@ -1,0 +1,26 @@
+name: Skill distribution validation
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-skill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run skill validation script
+        run: |
+          chmod +x scripts/validate-skill.sh
+          ./scripts/validate-skill.sh

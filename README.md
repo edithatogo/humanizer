@@ -43,6 +43,20 @@ Detects 25 patterns including inflated symbolism, superficial analyses, vague at
 - **2.2.0** - Modular refactor, Humanizer Pro, and Node.js build system.
 - **2.1.0** - Added Pattern #25 (AI Signatures) and Pattern #26 (Non-text slop).
 
+## Install & validate (Skillshare + AIX)
+
+We provide simple validation steps to help contributors verify SKILL.md changes:
+
+```bash
+# Quick local checks
+npm install
+npm run sync
+# Run the validation script which runs a skillshare dry-run and optional AIX validate
+scripts/validate-skill.sh
+```
+
+We also run `.github/workflows/skill-distribution.yml` on PRs to validate changes automatically.
+
 ## License
 
 MIT

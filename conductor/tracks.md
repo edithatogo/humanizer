@@ -35,3 +35,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 ## [ ] Track: Adopt upstream pull requests #3, #4, and #5 from blader/humanizer
 
 *Link: [./conductor/tracks/adopt-upstream-prs_20260131/](./conductor/tracks/adopt-upstream-prs_20260131/)*
+
+---
+
+## [ ] Track: Add Skillshare distribution + AIX validation (skill-distribution_20260131)
+
+*Link: [./conductor/tracks/skill-distribution_20260131/](./conductor/tracks/skill-distribution_20260131/)*
