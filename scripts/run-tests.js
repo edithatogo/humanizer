@@ -4,6 +4,11 @@ import path from 'path';
 
 console.log('--- Integration Testing Start ---');
 
+/**
+ * Run a shell command and inherit stdio
+ * @param {string} cmd
+ * @returns {boolean}
+ */
 function run(cmd) {
   console.log(`Running: ${cmd}`);
   try {
@@ -30,10 +35,10 @@ console.log('\n[3/3] Verifying generated artifacts...');
 const expectedAdapters = [
   'adapters/antigravity-skill/SKILL.md',
   'adapters/gemini-extension/GEMINI_PRO.md',
-  'adapters/vscode/HUMANIZER.md'
+  'adapters/vscode/HUMANIZER.md',
 ];
 
-expectedAdapters.forEach(p => {
+expectedAdapters.forEach((p) => {
   if (fs.existsSync(p)) {
     console.log(`  OK: ${p}`);
   } else {
