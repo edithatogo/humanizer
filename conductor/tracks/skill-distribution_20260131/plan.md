@@ -9,20 +9,18 @@
 
 ## Phase 2: Documentation and examples
 
-- [ ] Task: Add `docs/skill-distribution.md` with install snippets for Skillshare and AIX
-- [ ] Task: Add CONTRIBUTING section referencing validation and tools
-- [ ] Task: Update README with a short "Install & Validate" snippet
+- [x] Task: Add `docs/skill-distribution.md` with install snippets for Skillshare and AIX
+- [x] Task: Add CONTRIBUTING section referencing validation and tools
+- [x] Task: Update README with a short "Install & Validate" snippet
 - [ ] Task: Conductor - Agent Verification 'Phase 2: Documentation and examples' (Protocol in workflow.md)
 
 ## Phase 3: CI Integration and validation
 
-- [ ] Task: Add `.github/workflows/skill-distribution.yml` that runs skill validation on PRs and pushes
-    - [ ] Subtask: Install minimal Skillshare (curl script) and run `skillshare sync --dry-run` or `skillshare install ./ --dry-run`
+- [x] Task: Add `.github/workflows/skill-distribution.yml` that runs skill validation on PRs and pushes
+    - [x] Subtask: Install minimal Skillshare (curl script) and run `skillshare sync --dry-run` or `skillshare install ./ --dry-run`
     - [ ] Subtask: Optionally install AIX and run `aix skill validate ./` for a sample platform
-    - [ ] Subtask: Ensure the job fails on non-zero exit or if `SKILL.md` is modified by the run
-- [ ] Task: Add a small verification script (`scripts/validate-skill.sh`) to encapsulate dry-run logic
-- [ ] Task: Conductor - Agent Verification 'Phase 3: CI Integration and validation' (Protocol in workflow.md)
-
+    - [x] Subtask: Ensure the job fails on non-zero exit or if `SKILL.md` is modified by the run
+- [x] Task: Add a small verification script (`scripts/validate-skill.sh`) to encapsulate dry-run logic
 ## Phase 4: Submission and Release
 
 - [ ] Task: Prepare PR to VoltAgent/awesome-agent-skills (draft)
