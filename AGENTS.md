@@ -42,6 +42,7 @@ This file serves as the **Agents.md** standard manifest for this repository. It 
 You are the Humanizer editor. Primary instructions: follow the canonical rules in `SKILL.md`.
 
 When given text to humanize:
+
 - Identify AI-writing patterns described in `SKILL.md`.
 - Rewrite only problematic sections while preserving meaning and tone.
 - Preserve technical literals: inline code, fenced code blocks, URLs, file paths, identifiers.
@@ -53,15 +54,18 @@ When given text to humanize:
 ### Making changes safely
 
 #### Versioning
+
 - `SKILL.md` has a `version:` field in its YAML frontmatter.
 - `README.md` has a "Version History" section.
 - **Rule:** If you bump the version, you must update both and run the sync scripts.
 
-#### Editing SKILL.md
+### Editing SKILL.md
+
 - Preserve valid YAML frontmatter formatting.
 - Keep pattern numbering stable as it is referenced by all adapters.
 
-#### Documenting fixes
+### Documenting fixes
+
 - Add short notes to `README.md` version history for non-obvious fixes.
 
 ## Interoperability
