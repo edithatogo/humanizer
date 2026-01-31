@@ -16,7 +16,10 @@ $adapters = @(
   'AGENTS.md',
   'adapters/gemini-extension/GEMINI.md',
   'adapters/vscode/HUMANIZER.md',
-  'adapters/antigravity-skill/SKILL.md'
+  'adapters/antigravity-skill/SKILL.md',
+  'adapters/antigravity-rules-workflows/README.md',
+  'adapters/qwen-cli/QWEN.md',
+  'adapters/copilot/COPILOT.md'
 )
 
 $errors = @()

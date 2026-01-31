@@ -22,6 +22,8 @@ cp SKILL.md ~/.claude/skills/humanizer/
 
 ## Usage
 
+### Claude Code
+
 In Claude Code, invoke the skill:
 
 ```
@@ -36,6 +38,32 @@ Or ask Claude to humanize text directly:
 Please humanize this text: [your text]
 ```
 
+### Gemini CLI
+
+Use the extension command:
+
+```bash
+/humanizer:humanize "text to humanize"
+```
+
+### Google Antigravity
+
+**Skill:**
+Copy `adapters/antigravity-skill/` to your workspace skill directory (e.g., `.agent/skills/humanizer`).
+
+**Rules & Workflows:**
+See `adapters/antigravity-rules-workflows/README.md` for installation instructions.
+
+### Qwen CLI
+
+Include `adapters/qwen-cli/QWEN.md` in your context or copy its content to your Qwen system prompt.
+
+### GitHub Copilot
+
+Copy the content of `adapters/copilot/COPILOT.md` to your Copilot custom instructions.
+
+---
+
 ## Adapters (Multi-Agent)
 
 `SKILL.md` remains the canonical source of truth. These adapters provide thin wrappers for other environments:
@@ -43,14 +71,28 @@ Please humanize this text: [your text]
 - Codex CLI: `AGENTS.md`
 - Gemini CLI: `adapters/gemini-extension/`
 - Google Antigravity (skill): `adapters/antigravity-skill/`
+- Google Antigravity (rules/workflows): `adapters/antigravity-rules-workflows/`
+- Qwen CLI: `adapters/qwen-cli/`
+- GitHub Copilot: `adapters/copilot/`
 - VS Code: `adapters/vscode/`
 
 ### Sync Process
 
-1. Update adapter metadata blocks to match `SKILL.md` version and `last_synced` date.
-2. Run validation:
-   - PowerShell: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-adapters.ps1`
-   - Windows CMD: `scripts/validate-adapters.cmd`
+When `SKILL.md` is updated, run the sync script to propagate changes to all adapters:
+
+1.  **Sync:**
+    *   PowerShell: `scripts/sync-adapters.ps1`
+    *   CMD: `scripts/sync-adapters.cmd`
+    *(This copies the core skill content to the Antigravity adapter and updates version metadata files)*
+
+2.  **Validate:**
+    *   PowerShell: `scripts/validate-adapters.ps1`
+    *   CMD: `scripts/validate-adapters.cmd`
+
+3.  **Install:**
+    *   PowerShell: `scripts/install-adapters.ps1`
+    *   CMD: `scripts/install-adapters.cmd`
+    *(This automatically places all adapter files into their respective local/workspace directories)*
 
 ## Overview
 
