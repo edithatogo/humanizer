@@ -18,7 +18,8 @@
 
 ## Phase 3: Pre-commit & Prose Linting
 
-- [~] Task: Configure `.pre-commit-config.yaml` with Ruff, Mypy, and Markdownlint
+- [x] Task: Configure `.pre-commit-config.yaml` with Ruff, Mypy, and Markdownlint (5067d34)
+
 - [ ] Task: Conductor - Agent Verification 'Phase 3: Pre-commit & Prose Linting'
 
 ## Phase 4: CI/CD
