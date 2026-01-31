@@ -2,7 +2,7 @@
 
 ## Phase 1: Define extension structure
 - [x] Task: Extract Gemini CLI extension requirements from the reference URL (b011e1d)
-- [~] Task: Decide extension folder layout and naming
+- [x] Task: Decide extension folder layout and naming (9d802a2)
 - [ ] Task: Define adapter metadata contract (version + last synced)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Define extension structure' (Protocol in workflow.md)
 
