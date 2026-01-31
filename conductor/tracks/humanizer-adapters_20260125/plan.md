@@ -19,7 +19,7 @@
 - [x] Task: Update README to document adapters and sync process (158babb)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Drift control and validation' (Protocol in workflow.md)
 
-## Phase 4: Release readiness
+## Phase 4: Release readiness [checkpoint: 1f06dcb]
 - [x] Task: Run validation and verify no changes to SKILL.md (7a37c65)
 - [x] Task: Tag/record adapter pack versioning approach (doc-only) (e3c81c9)
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Release readiness' (Protocol in workflow.md)
