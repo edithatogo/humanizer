@@ -9,7 +9,7 @@
 ## Phase 2: Implement adapters
 - [x] Task: Add Codex CLI adapter (AGENTS.md/workflow instructions) (d240d65)
 - [x] Task: Add Gemini CLI adapter (prompt/workflow wrapper) (c7945c6)
-- [ ] Task: Add VS Code adapter (workspace instructions/snippets)
+- [~] Task: Add VS Code adapter (workspace instructions/snippets)
 - [ ] Task: Add Google Antigravity adapter (workflow wrapper)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement adapters' (Protocol in workflow.md)
 
