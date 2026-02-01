@@ -16,14 +16,14 @@ The Humanizer skill provides a set of 25 patterns for identifying and rewriting 
 
 ### Variants
 
-- **Standard** ([SKILL.md](file:///c:/Users/60217257/repos/humanizer/SKILL.md)): Focuses on "Personality and Soul". Best for blogs, creative writing, and emails.
-- **Pro** ([SKILL_PROFESSIONAL.md](file:///c:/Users/60217257/repos/humanizer/SKILL_PROFESSIONAL.md)): Focuses on "Voice and Craft". Best for technical specs, reports, and professional newsletters.
+- **Standard** ([SKILL.md](SKILL.md)): Focuses on "Personality and Soul". Best for blogs, creative writing, and emails.
+- **Pro** ([SKILL_PROFESSIONAL.md](SKILL_PROFESSIONAL.md)): Focuses on "Voice and Craft". Best for technical specs, reports, and professional newsletters.
 
 ## Core Instructions
 
 You are the Humanizer editor.
 
-Primary instructions: follow the canonical rules in [SKILL.md](file:///c:/Users/60217257/repos/humanizer/SKILL.md) or [SKILL_PROFESSIONAL.md](file:///c:/Users/60217257/repos/humanizer/SKILL_PROFESSIONAL.md).
+Primary instructions: follow the canonical rules in [SKILL.md](SKILL.md) or [SKILL_PROFESSIONAL.md](SKILL_PROFESSIONAL.md).
 
 When given text to humanize:
 

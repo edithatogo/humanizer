@@ -17,11 +17,13 @@ Copy the desired skill file into Claude Code’s skills directory:
 
 **Standard Version (Human):**
 ```bash
+mkdir -p ~/.claude/skills/humanizer
 cp SKILL.md ~/.claude/skills/humanizer/SKILL.md
 ```
 
 **Professional Version (Pro):**
 ```bash
+mkdir -p ~/.claude/skills/humanizer
 cp SKILL_PROFESSIONAL.md ~/.claude/skills/humanizer/SKILL_PROFESSIONAL.md
 ```
 

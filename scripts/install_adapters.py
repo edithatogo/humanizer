@@ -75,6 +75,11 @@ def main() -> None:
         "SKILL.md",
     )
     install_file(
+        adapters / "antigravity-skill" / "SKILL_PROFESSIONAL.md",
+        root / ".agent" / "skills" / "humanizer",
+        "SKILL_PROFESSIONAL.md",
+    )
+    install_file(
         adapters / "antigravity-skill" / "README.md",
         root / ".agent" / "skills" / "humanizer",
         "README.md",
