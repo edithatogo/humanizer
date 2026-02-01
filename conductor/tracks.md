@@ -10,23 +10,23 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 *Link: [./conductor/tracks/devops-quality_20260131/](./conductor/tracks/devops-quality_20260131/)*
 
-## [x] Track: Universal Automated Adapters
+## [x] Track: Universal Automated Adapters (5067d34)
 
 *Link: [./conductor/tracks/universal-automated-adapters_20260131/](./conductor/tracks/universal-automated-adapters_20260131/)*
 
-## [x] Track: Expand Humanizer adapters to Qwen CLI and Copilot
+## [x] Track: Expand Humanizer adapters to Qwen CLI and Copilot (5067d34)
 
 *Link: [./conductor/tracks/adapters-expansion_20260131/](./conductor/tracks/adapters-expansion_20260131/)*
 
-## [x] Track: Create Google Antigravity rules/workflows adapter guidance for Humanizer
+## [x] Track: Create Google Antigravity rules/workflows adapter guidance for Humanizer (5067d34)
 
 *Link: [./conductor/tracks/antigravity-rules-workflows_20260131/](./conductor/tracks/antigravity-rules-workflows_20260131/)*
 
-## [x] Track: Create a Google Antigravity skill adapter for Humanizer
+## [x] Track: Create a Google Antigravity skill adapter for Humanizer (5067d34)
 
 *Link: [./conductor/tracks/antigravity-skills_20260131/](./conductor/tracks/antigravity-skills_20260131/)*
 
-## [x] Track: Create a Gemini CLI extension adapter for Humanizer
+## [x] Track: Create a Gemini CLI extension adapter for Humanizer (5067d34)
 
 *Link: [./conductor/tracks/gemini-extension_20260131/](./conductor/tracks/gemini-extension_20260131/)*
 

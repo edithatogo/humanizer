@@ -1,7 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const SRC_DIR = 'src';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const REPO_ROOT = path.resolve(__dirname, '..');
+const SRC_DIR = path.join(REPO_ROOT, 'src');
 const CORE_FM_PATH = path.join(SRC_DIR, 'core_frontmatter.yaml');
 const CORE_PATTERNS_PATH = path.join(SRC_DIR, 'core_patterns.md');
 const HUMAN_HEADER_PATH = path.join(SRC_DIR, 'human_header.md');
@@ -27,13 +31,28 @@ function compileSkill(headerPath) {
   return full;
 }
 
+function mergeAdapterMetadata(source, metadata) {
+  const match = source.match(/^---\n([\s\S]*?)\n---\n?/);
+  if (!match) {
+    return `---\n${metadata}\n---\n\n${source}`;
+  }
+
+  const frontmatter = match[1].replace(
+    /(^|\n)adapter_metadata:\n(?:[ \t].*\n)*/m,
+    '\n',
+  ).trimEnd();
+  const rest = source.slice(match[0].length);
+  const mergedFrontmatter = `${frontmatter}\n${metadata}`.trimEnd();
+  return `---\n${mergedFrontmatter}\n---\n\n${rest}`;
+}
+
 console.log('Compiling Standard Humanizer...');
 const standardContent = compileSkill(HUMAN_HEADER_PATH);
-fs.writeFileSync('SKILL.md', standardContent, 'utf8');
+fs.writeFileSync(path.join(REPO_ROOT, 'SKILL.md'), standardContent, 'utf8');
 
 console.log('Compiling Humanizer Pro...');
 const proContent = compileSkill(PRO_HEADER_PATH);
-fs.writeFileSync('SKILL_PROFESSIONAL.md', proContent, 'utf8');
+fs.writeFileSync(path.join(REPO_ROOT, 'SKILL_PROFESSIONAL.md'), proContent, 'utf8');
 
 const vStandard = standardContent.match(/^version:\s*([\w.-]+)\s*$/m)?.[1];
 const vPro = proContent.match(/^version:\s*([\w.-]+)\s*$/m)?.[1];
@@ -45,7 +64,7 @@ console.log(`Pro Version: ${vPro}`);
 const adapters = [
   {
     name: 'Antigravity Skill Standard',
-    path: 'adapters/antigravity-skill/SKILL.md',
+    path: path.join(REPO_ROOT, 'adapters', 'antigravity-skill', 'SKILL.md'),
     source: standardContent,
     id: 'antigravity-skill',
     format: 'Antigravity skill',
@@ -53,7 +72,7 @@ const adapters = [
   },
   {
     name: 'Antigravity Skill Pro',
-    path: 'adapters/antigravity-skill/SKILL_PROFESSIONAL.md',
+    path: path.join(REPO_ROOT, 'adapters', 'antigravity-skill', 'SKILL_PROFESSIONAL.md'),
     source: proContent,
     id: 'antigravity-skill-pro',
     format: 'Antigravity skill',
@@ -61,7 +80,7 @@ const adapters = [
   },
   {
     name: 'Gemini Extension Standard',
-    path: 'adapters/gemini-extension/GEMINI.md',
+    path: path.join(REPO_ROOT, 'adapters', 'gemini-extension', 'GEMINI.md'),
     source: standardContent,
     id: 'gemini-extension',
     format: 'Gemini extension',
@@ -69,7 +88,7 @@ const adapters = [
   },
   {
     name: 'Gemini Extension Pro',
-    path: 'adapters/gemini-extension/GEMINI_PRO.md',
+    path: path.join(REPO_ROOT, 'adapters', 'gemini-extension', 'GEMINI_PRO.md'),
     source: proContent,
     id: 'gemini-extension-pro',
     format: 'Gemini extension',
@@ -77,7 +96,7 @@ const adapters = [
   },
   {
     name: 'Rules Workflows Standard',
-    path: 'adapters/antigravity-rules-workflows/README.md',
+    path: path.join(REPO_ROOT, 'adapters', 'antigravity-rules-workflows', 'README.md'),
     source: standardContent,
     id: 'antigravity-rules-workflows',
     format: 'Antigravity rules/workflows',
@@ -85,7 +104,7 @@ const adapters = [
   },
   {
     name: 'Qwen CLI Standard',
-    path: 'adapters/qwen-cli/QWEN.md',
+    path: path.join(REPO_ROOT, 'adapters', 'qwen-cli', 'QWEN.md'),
     source: standardContent,
     id: 'qwen-cli',
     format: 'Qwen CLI context',
@@ -93,7 +112,7 @@ const adapters = [
   },
   {
     name: 'Copilot Standard',
-    path: 'adapters/copilot/COPILOT.md',
+    path: path.join(REPO_ROOT, 'adapters', 'copilot', 'COPILOT.md'),
     source: standardContent,
     id: 'copilot',
     format: 'Copilot instructions',
@@ -101,7 +120,7 @@ const adapters = [
   },
   {
     name: 'VSCode Standard',
-    path: 'adapters/vscode/HUMANIZER.md',
+    path: path.join(REPO_ROOT, 'adapters', 'vscode', 'HUMANIZER.md'),
     source: standardContent,
     id: 'vscode',
     format: 'VSCode markdown',
@@ -116,18 +135,14 @@ adapters.forEach((adapter) => {
 
   if (!name) throw new Error(`Could not find name for ${adapter.path}`);
 
-  const metaBlock = `---
-adapter_metadata:
+  const metaBlock = `adapter_metadata:
   skill_name: ${name}
   skill_version: ${version}
   last_synced: ${today}
   source_path: ${adapter.base}
   adapter_id: ${adapter.id}
-  adapter_format: ${adapter.format}
----
-
-`;
-  const newContent = metaBlock + '\n' + adapter.source;
+  adapter_format: ${adapter.format}`;
+  const newContent = mergeAdapterMetadata(adapter.source, metaBlock);
   const dir = path.dirname(adapter.path);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(adapter.path, newContent, 'utf8');

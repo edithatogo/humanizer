@@ -1,5 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const REPO_ROOT = path.resolve(__dirname, '..');
 
 const adapters = [
   { path: 'adapters/antigravity-skill/SKILL.md', base: 'SKILL.md' },
@@ -15,34 +20,39 @@ const adapters = [
 let failed = false;
 
 adapters.forEach(adapter => {
-  if (!fs.existsSync(adapter.path)) {
+  const adapterPath = path.join(REPO_ROOT, adapter.path);
+  if (!fs.existsSync(adapterPath)) {
     console.error(`Missing: ${adapter.path}`);
     failed = true;
     return;
   }
 
-  const content = fs.readFileSync(adapter.path, 'utf8');
-  const metaMatch = content.match(/^---\s*adapter_metadata:([\s\S]*?)^---\s*/m);
+  const content = fs.readFileSync(adapterPath, 'utf8');
+  const frontmatterMatch = content.match(/^---\s*([\s\S]*?)^---\s*/m);
   
-  if (!metaMatch) {
-    console.error(`No metadata found in ${adapter.path}`);
+  if (!frontmatterMatch) {
+    console.error(`No frontmatter found in ${adapter.path}`);
     failed = true;
     return;
   }
 
-  const sourceContent = fs.readFileSync(adapter.base, 'utf8');
+  const sourceContent = fs.readFileSync(path.join(REPO_ROOT, adapter.base), 'utf8');
   const sourceName = sourceContent.match(/^name:\s*([\w.-]+)\s*$/m)?.[1];
   const sourceVersion = sourceContent.match(/^version:\s*([\w.-]+)\s*$/m)?.[1];
 
-  const metaContent = metaMatch[1];
-  const metaName = metaContent.match(/skill_name:\s*([\w.-]+)/)?.[1];
-  const metaVersion = metaContent.match(/skill_version:\s*([\w.-]+)/)?.[1];
-  const metaSource = metaContent.match(/source_path:\s*([\w.-]+)/)?.[1];
+  const metaContent = frontmatterMatch[1];
+  const metaName = metaContent.match(/^\s*skill_name:\s*([\w.-]+)\s*$/m)?.[1];
+  const metaVersion = metaContent.match(/^\s*skill_version:\s*([\w.-]+)\s*$/m)?.[1];
+  const metaSource = metaContent.match(/^\s*source_path:\s*([\w.-]+)\s*$/m)?.[1];
+  const metaSynced = metaContent.match(/^\s*last_synced:\s*([0-9]{4}-[0-9]{2}-[0-9]{2})\s*$/m)?.[1];
 
   if (metaName !== sourceName || metaVersion !== sourceVersion || metaSource !== adapter.base) {
     console.error(`Validation Failed for ${adapter.path}:`);
     console.error(`  Expected: ${sourceName} v${sourceVersion} (from ${adapter.base})`);
     console.error(`  Found:    ${metaName} v${metaVersion} (source: ${metaSource})`);
+    failed = true;
+  } else if (!metaSynced) {
+    console.error(`Validation Failed for ${adapter.path}: invalid last_synced`);
     failed = true;
   } else {
     console.log(`Valid: ${adapter.path}`);
