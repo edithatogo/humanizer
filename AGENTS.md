@@ -16,7 +16,7 @@ This repository defines the **Humanizer** coding skill, designed to remove AI-ge
 
 The Humanizer skill provides a set of 25 patterns for identifying and rewriting "AI-slop" or sterile writing. It preserves technical literals (code blocks, URLs, identifiers) while injecting personality and human-like voice.
 
-- **Primary Prompt:** [SKILL.md](file:///c:/Users/60217257/repos/humanizer/SKILL.md)
+- **Primary Prompt:** [SKILL.md](SKILL.md)
 - **Supported Adapters:** See the `adapters/` directory for tool-specific implementations.
 
 ## Context

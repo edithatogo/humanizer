@@ -1,8 +1,8 @@
 ---
 adapter_metadata:
   skill_name: humanizer
-  skill_version: 2.1.1
-  last_synced: 2026-01-31
+  skill_version: 2.2.0
+  last_synced: 2026-02-01
   source_path: SKILL.md
   adapter_id: qwen-cli
   adapter_format: Qwen CLI context
