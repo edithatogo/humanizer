@@ -14,17 +14,26 @@
     "lint:all": "npm run lint && npm run lint:js && npm run typecheck && npm run format:check",
     "test": "node --test test/*.test.js && node scripts/run-tests.js",
     "build": "node scripts/compile-skill.js",
-    "install:adapters": "node scripts/install-adapters.js"
+    "install:adapters": "node scripts/install-adapters.js",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,mjs,ts}": "eslint --fix",
+    "**/*.md": "markdownlint --fix",
+    "**/*.{js,json,md,mdx,css,scss,ts,tsx}": "prettier --write"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@types/node": "^25.1.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.7",
     "markdownlint-cli": "^0.44.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3"

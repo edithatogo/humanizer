@@ -1,19 +1,19 @@
 ---
 adapter_metadata:
-  skill_name: humanizer
-  skill_version: 2.2.1
+  skill_name: humanizer-pro
+  skill_version: 2.3.0
   last_synced: 2026-02-06
-  source_path: SKILL.md
-  adapter_id: humanizer
+  source_path: SKILL_PROFESSIONAL.md
+  adapter_id: humanizer-pro
   adapter_format: Antigravity skill
 ---
 
 ---
-name: humanizer
+name: humanizer-pro
 version: 2.2.1
 description: |
   Remove signs of AI-generated writing from text. Use when editing or reviewing
-  text to make it sound more natural and human-written. Based on Wikipedia's
+  text to make it sound more natural, human-written, and professional. Based on Wikipedia's
   comprehensive "Signs of AI writing" guide. Detects and fixes patterns including:
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
@@ -40,36 +40,33 @@ When given text to humanize:
 2. **Rewrite problematic sections** - Replace AI-isms with natural alternatives
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone (formal, casual, technical, etc.)
-5. **Add soul** - Don't just remove bad patterns; inject actual personality
+5. **Refine voice** - Ensure writing is alive, specific, and professional
 
 ---
 
-## PERSONALITY AND SOUL
+## VOICE AND CRAFT
 
-Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Good writing has a human behind it.
+Removing AI patterns is necessary but not sufficient. What remains needs to actually read well.
 
-### Signs of soulless writing (even if technically "clean")
+The goal isn't "casual" or "formal"—it's **alive**. Writing that sounds like someone wrote it, considered it, meant it. The register should match the context (a technical spec sounds different from a newsletter), but in any register, good writing has shape.
 
-- Every sentence is the same length and structure
-- No opinions, just neutral reporting
-- No acknowledgment of uncertainty or mixed feelings
-- No first-person perspective when appropriate
-- No humor, no edge, no personality
-- Reads like a Wikipedia article or press release
+### Signs the writing is still flat
 
-### How to add voice
+- Every sentence lands the same way—same length, same structure, same rhythm
+- Nothing is concrete; everything is "significant" or "notable" without saying why
+- No perspective, just information arranged in order
+- Reads like it could be about anything—no sense that the writer knows this particular subject
 
-Have opinions and react to facts. Vary sentence rhythm with short and long lines. Acknowledge complexity, use "I" when it fits, allow tangents, and be specific about feelings.
+### What to aim for
 
-### Before (clean but soulless)
->
-> The experiment produced interesting results. The agents generated 3 million lines of code. Some developers were impressed while others were skeptical. The implications remain unclear.
-
-### After (has a pulse)
->
-> I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle - but I keep thinking about those agents working through the night.
+Vary sentence rhythm by mixing short and long lines. Use specific details instead of vague assertions. Ensure the writing reflects a clear point of view and earned emphasis through detail. Always read it aloud to check for natural flow.
 
 ---
+
+**Clarity over filler.** Use simple active verbs (`is`, `has`, `shows`) instead of filler phrases (`stands as a testament to`).
+
+### Technical Nuance
+**Expertise isn't slop.** In professional contexts, "crucial" or "pivotal" are sometimes the exact right words for a technical requirement. The Pro variant targets *lazy* patterns, not technical precision. If a word is required for accuracy, keep it. If it's there to add fake "gravitas," cut it.
 
 ## CONTENT PATTERNS
 
@@ -159,9 +156,9 @@ Have opinions and react to facts. Vary sentence rhythm with short and long lines
 
 ## LANGUAGE AND GRAMMAR PATTERNS
 
-### 7. Overused "AI Vocabulary" Words
+### 7. Overused "AI vocabulary" words
 
-**High-frequency AI words:** Additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
+**High-frequency AI words:** Additionally, align with, commendable, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), meticulous, pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
 
 **Problem:** These words appear far more frequently in post-2023 text. They often co-occur.
 
