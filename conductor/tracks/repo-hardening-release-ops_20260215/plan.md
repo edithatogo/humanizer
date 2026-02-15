@@ -18,6 +18,7 @@
   - [ ] Document PR creation workflow
   - [ ] Document merge conflict resolution procedure
   - [ ] Document post-merge verification steps
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Assessment and Policy Drafting' (Protocol in workflow.md)
 
 ## Phase 2: Hardening Implementation
@@ -41,6 +42,7 @@
   - [ ] Create `RELEASE_CHECKLIST.md` with tickable items
   - [ ] Include: version bump verification, changelog update, tests pass, adapters validated
   - [ ] Document when to use checklist (every release)
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Hardening Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Operational Readiness
@@ -52,6 +54,7 @@
 - [ ] Task: Document deferred risks and next actions
   - [ ] Create risk register for deferred items
   - [ ] Document when deferred items should be revisited
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Operational Readiness' (Protocol in workflow.md)
 
 ## Handoff Artifacts

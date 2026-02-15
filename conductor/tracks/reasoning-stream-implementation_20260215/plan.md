@@ -8,6 +8,7 @@
 - [ ] Task: Add reasoning stream source modules
   - [ ] Add/extend src/ fragments for reasoning stream
   - [ ] Connect taxonomy references from `docs/reasoning-failures-taxonomy.md`
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Stream Architecture and Source Integration' (Protocol in workflow.md)
 
 ## Phase 2: Build, Adapter, and Test Integration
@@ -30,6 +31,7 @@
 - [ ] Task: Run repository validation suite
   - [ ] Run tests and validation scripts
   - [ ] Run `npm run lint` and `npm run validate`
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Build, Adapter, and Test Integration' (Protocol in workflow.md)
 
 ## Phase 3: Release Notes and Handoff
@@ -38,6 +40,7 @@
 - [ ] Task: Document operator guidance for stream usage
   - [ ] How to invoke reasoning stream vs core humanization
   - [ ] When to use which stream
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Release Notes and Handoff' (Protocol in workflow.md)
 
 ## Handoff Artifacts

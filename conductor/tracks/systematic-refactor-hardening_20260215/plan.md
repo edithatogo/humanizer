@@ -11,6 +11,7 @@
   - [ ] Document target module boundaries
   - [ ] Define acceptable coupling thresholds (e.g., max 5 incoming deps)
   - [ ] Create hotspot matrix with priority rankings
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Hotspot Discovery and Refactor Plan' (Protocol in workflow.md)
 
 ## Phase 2: Refactor Execution
@@ -27,6 +28,7 @@
 - [ ] Task: Update developer docs and contribution guidance
   - [ ] Document module boundaries in docs/architecture.md
   - [ ] Update contribution guide with coupling guidelines
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Refactor Execution' (Protocol in workflow.md)
 
 ## Phase 3: Guardrails and Maintenance
@@ -43,6 +45,7 @@
   - [ ] Create `docs/maintenance-playbook.md`
   - [ ] Define quarterly hotspot review cadence
   - [ ] Define trigger for out-of-cycle review (e.g., new stream added)
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Guardrails and Maintenance' (Protocol in workflow.md)
 
 ## Handoff Artifacts

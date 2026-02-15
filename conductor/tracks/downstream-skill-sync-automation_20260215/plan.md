@@ -12,6 +12,7 @@
 - [ ] Task: Define safety checks and dry-run protocol
   - [ ] Pre-sync validation (manifest integrity, adapter consistency)
   - [ ] Dry-run mode that logs actions without executing
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Target Discovery and Trigger Design' (Protocol in workflow.md)
 
 ## Phase 2: Automation Implementation
@@ -35,6 +36,7 @@
   - [ ] Capture pre-sync state snapshot
   - [ ] Implement per-target rollback script
   - [ ] Document rollback procedure in `docs/sync-rollback.md`
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Automation Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Operationalization
@@ -46,6 +48,7 @@
 - [ ] Task: Document rollback and incident handling
   - [ ] Incident response checklist
   - [ ] Escalation paths for sync failures
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Operationalization' (Protocol in workflow.md)
 
 ## Handoff Artifacts

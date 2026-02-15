@@ -13,6 +13,7 @@
 - [ ] Task: Create option validation schema
   - [ ] Define valid option combinations
   - [ ] Define incompatible combinations (e.g., review_mode without review skill)
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Template Model and Option Matrix' (Protocol in workflow.md)
 
 ## Phase 2: Template Artifact Implementation
@@ -32,6 +33,7 @@
   - [ ] Quickstart guide for common use cases
   - [ ] Full option reference
   - [ ] Troubleshooting for common issues
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Template Artifact Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Example Integration and Handoff
@@ -41,6 +43,7 @@
   - [ ] Example 2: Technical report (pro, reasoning on, review on)
   - [ ] Example 3: Quick email polish (standard, no reasoning, no review)
 - [ ] Task: Add changelog/version notes
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Example Integration and Handoff' (Protocol in workflow.md)
 
 ## Handoff Artifacts

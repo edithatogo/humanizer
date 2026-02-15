@@ -46,6 +46,7 @@
 - [ ] Task: Test taxonomy and evidence-threshold enforcement
   - [ ] Write failing tests for taxonomy consistency and threshold constraints
   - [ ] Implement logic/docs updates to satisfy tests
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Evidence Expansion, Quality, and Taxonomy' (Protocol in workflow.md)
 
 ## Phase 3: Repo Documentation and Skill-Stream Integration
@@ -65,6 +66,7 @@
 - [ ] Task: Add regression and compatibility tests
   - [ ] Write failing tests for no-regression behavior in existing humanizer outputs
   - [ ] Implement fixes until tests pass
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Repo Documentation and Skill-Stream Integration' (Protocol in workflow.md)
 
 ## Phase 4: Wikipedia Edit Workflow Execution
@@ -84,6 +86,7 @@
   - [ ] Check edit status at 24h and 48h intervals
   - [ ] If reverted: document in `docs/wikipedia-edit-history.md` with reversion reason
   - [ ] If reverted: draft revised edit addressing objections for retry decision
+- [ ] Task: Execute /conductor:review for Phase 4
 - [ ] Task: Conductor - Automated Verification 'Phase 4: Wikipedia Edit Workflow Execution' (Protocol in workflow.md)
 
 ## Phase 5: Recommendations, Release Gate, and Handoff
@@ -100,6 +103,7 @@
 - [ ] Task: Finalize changelog/version notes for this track's outputs
   - [ ] Update changelog entries and version rationale for introduced stream
   - [ ] Ensure release/readme notes are internally consistent
+- [ ] Task: Execute /conductor:review for Phase 5
 - [ ] Task: Conductor - Automated Verification 'Phase 5: Recommendations, Release Gate, and Handoff' (Protocol in workflow.md)
 
 ## Handoff Artifacts (Unblocks Downstream Tracks)

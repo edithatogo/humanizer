@@ -13,6 +13,7 @@
   - [ ] Add sample reasoning-failure examples in `tests/fixtures/reasoning-failures/`
   - [ ] Include examples of each taxonomy category
   - [ ] Include examples of citation quality issues
+- [ ] Task: Execute /conductor:review for Phase 1
 - [ ] Task: Conductor - Automated Verification 'Phase 1: Review Skill Design' (Protocol in workflow.md)
 
 ## Phase 2: Implementation and Validation
@@ -29,6 +30,7 @@
 - [ ] Task: Validate integration with existing adapters
   - [ ] Verify review skill is included in adapter outputs
   - [ ] Test review behavior in at least one adapter environment
+- [ ] Task: Execute /conductor:review for Phase 2
 - [ ] Task: Conductor - Automated Verification 'Phase 2: Implementation and Validation' (Protocol in workflow.md)
 
 ## Phase 3: Documentation and Handoff
@@ -39,6 +41,7 @@
   - [ ] Document integration with conductor workflows
 - [ ] Task: Add changelog/version updates
 - [ ] Task: Create review integration guide for conductor-humanizer-templates
+- [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Documentation and Handoff' (Protocol in workflow.md)
 
 ## Handoff Artifacts
