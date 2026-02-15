@@ -1,0 +1,120 @@
+# Implementation Plan: LLM Reasoning Failures Stream (Track 1)
+
+## Phase 1: Source Acquisition and Provenance Baseline
+
+- [ ] Task: Create archive structure for reasoning-failure sources
+  - [ ] Add folders/files for paper assets and metadata under `archive/`
+  - [ ] Define deterministic naming convention for archived assets
+- [ ] Task: Download and archive arXiv 2602.06176 artifacts
+  - [ ] Save paper PDF and canonical metadata snapshot
+  - [ ] Record retrieval date, source URL, and checksum/hash
+- [ ] Task: Add provenance manifest
+  - [ ] Create `archive/sources_manifest.json` with schema fields (id, type, url, fetched_at, hash, status)
+  - [ ] Register initial source entries (paper + provided repo)
+- [ ] Task: Add/extend validation checks for source manifest integrity
+  - [ ] Write failing tests for manifest schema and required fields
+  - [ ] Implement validation code/scripts to satisfy tests
+- [ ] Task: Add pre-commit hook for manifest validation
+  - [ ] Add `.pre-commit-config.yaml` entry for `archive/sources_manifest.json` schema validation
+  - [ ] Add `scripts/validate-manifest.sh` to run schema check
+  - [ ] Test hook triggers on manifest changes
+- [ ] Task: Add reproducible command block for source refresh
+  - [ ] Document one-shot commands to re-fetch/validate archived sources
+  - [ ] Ensure commands are non-interactive and CI-safe
+- [ ] Task: Conductor - Automated Verification 'Phase 1: Source Acquisition and Provenance Baseline' (Protocol in workflow.md)
+
+## Phase 2: Evidence Expansion, Quality, and Taxonomy
+
+- [ ] Task: Research and catalog additional reasoning-failure sources
+  - [ ] Search and collect primary sources (papers/repos/articles) linked to the claim set
+  - [ ] Add confidence/quality labels and claim summaries
+- [ ] Task: Add deferred/unverified claims section
+  - [ ] Capture social-only or weakly supported claims as deferred
+  - [ ] Mark verification gaps and required follow-up evidence
+- [ ] Task: Add conflict-of-sources resolution rules
+  - [ ] Define tie-break policy when sources disagree (recency, authority, empirical strength)
+  - [ ] Record conflict outcomes in evidence log
+- [ ] Task: Define canonical reasoning-failure taxonomy/schema
+  - [ ] Propose category schema and mapping rules
+  - [ ] Encode minimal evidence threshold rule for new categories
+  - [ ] Add `docs/TAXONOMY_CHANGELOG.md` for tracking category additions/changes over time
+- [ ] Task: Add citation normalization helper
+  - [ ] Create lightweight helper under `scripts/research/` to standardize citation entries
+  - [ ] Use helper to normalize existing/new evidence-log citations
+- [ ] Task: Test taxonomy and evidence-threshold enforcement
+  - [ ] Write failing tests for taxonomy consistency and threshold constraints
+  - [ ] Implement logic/docs updates to satisfy tests
+- [ ] Task: Conductor - Automated Verification 'Phase 2: Evidence Expansion, Quality, and Taxonomy' (Protocol in workflow.md)
+
+## Phase 3: Repo Documentation and Skill-Stream Integration
+
+- [ ] Task: Add dedicated LLM reasoning failures documentation page(s)
+  - [ ] Create/update docs with citations mapped to claims
+  - [ ] Ensure consistency with repository style and structure
+- [ ] Task: Add editorial policy boundary
+  - [ ] Document distinction between humanization patterns and reasoning diagnostics
+  - [ ] Reference policy from relevant docs/skill entry points
+- [ ] Task: Implement separate reasoning-focused module/skill stream
+  - [ ] Add new source fragments/files under `src/` (or equivalent modular location)
+  - [ ] Wire output generation so existing workflow remains stable
+- [ ] Task: Update compiled outputs/adapters as required
+  - [ ] Run sync/build workflow
+  - [ ] Verify adapters include intended reasoning stream references
+- [ ] Task: Add regression and compatibility tests
+  - [ ] Write failing tests for no-regression behavior in existing humanizer outputs
+  - [ ] Implement fixes until tests pass
+- [ ] Task: Conductor - Automated Verification 'Phase 3: Repo Documentation and Skill-Stream Integration' (Protocol in workflow.md)
+
+## Phase 4: Wikipedia Edit Workflow Execution
+
+- [ ] Task: Prepare in-repo Wikipedia edit draft
+  - [ ] Produce proposed edit text and citation mapping
+  - [ ] Validate neutrality and no-original-synthesis constraints
+- [ ] Task: Execute headful browser login-assisted flow
+  - [ ] Launch headful browser and navigate to target page
+  - [ ] Pause for user login and confirm authenticated state
+- [ ] Task: Apply and submit Wikipedia updates
+  - [ ] Apply approved draft changes on target page
+  - [ ] Save edit and capture revision/permalink
+- [ ] Task: Persist audit trail in repository
+  - [ ] Record pre-publish draft, post-publish revision ID, timestamp, and summary
+- [ ] Task: Monitor and handle edit reversion (fallback)
+  - [ ] Check edit status at 24h and 48h intervals
+  - [ ] If reverted: document in `docs/wikipedia-edit-history.md` with reversion reason
+  - [ ] If reverted: draft revised edit addressing objections for retry decision
+- [ ] Task: Conductor - Automated Verification 'Phase 4: Wikipedia Edit Workflow Execution' (Protocol in workflow.md)
+
+## Phase 5: Recommendations, Release Gate, and Handoff
+
+- [ ] Task: Produce follow-on track recommendations
+  - [ ] Define track boundaries for review skill, conductor templates/workflows, and CI/release hardening
+  - [ ] Document revisit points for architecture decisions
+- [ ] Task: Release decision gate
+  - [ ] Decide patch vs minor bump based on surface-area change
+  - [ ] Decide whether package/release artifact updates are warranted now
+- [ ] Task: Validate repo quality gates after Track 1 changes
+  - [ ] Run tests, lint/static checks, and relevant build/sync commands
+  - [ ] Document any residual risks and deferred work
+- [ ] Task: Finalize changelog/version notes for this track's outputs
+  - [ ] Update changelog entries and version rationale for introduced stream
+  - [ ] Ensure release/readme notes are internally consistent
+- [ ] Task: Conductor - Automated Verification 'Phase 5: Recommendations, Release Gate, and Handoff' (Protocol in workflow.md)
+
+## Handoff Artifacts (Unblocks Downstream Tracks)
+
+- [ ] Artifact: `archive/sources_manifest.json` - source provenance for reasoning-failure claims
+- [ ] Artifact: `docs/reasoning-failures-taxonomy.md` - canonical category schema
+- [ ] Artifact: `docs/TAXONOMY_CHANGELOG.md` - taxonomy evolution tracking
+- [ ] Artifact: `src/reasoning-stream/*.md` - source fragments for reasoning module
+- [ ] Artifact: `scripts/research/citation-normalize.js` - citation helper utility
+- [ ] Artifact: `docs/wikipedia-edit-history.md` - edit audit trail (success or fallback)
+
+## Definition of Done
+
+- [ ] All acceptance criteria in `spec.md` are satisfied
+- [ ] All phases have verification checkpoints passed
+- [ ] Handoff artifacts exist and are committed
+- [ ] Downstream tracks' Required Inputs are available
+- [ ] `metadata.json` status updated to `completed`
+- [ ] `npm run lint` and `npm run validate` pass
+- [ ] No regressions in existing humanizer behavior

@@ -1,0 +1,13 @@
+{
+  "track_id": "conductor-review-skill_20260215",
+  "type": "feature",
+  "status": "blocked",
+  "priority": "P1",
+  "depends_on": ["reasoning-failures-stream_20260215"],
+  "blocked_by": "reasoning-failures-stream_20260215 (requires: taxonomy schema, citation model)",
+  "parallel_safe": false,
+  "estimated_complexity": "medium",
+  "created_at": "2026-02-15T05:14:47Z",
+  "updated_at": "2026-02-15T05:14:47Z",
+  "description": "Create a Humanizer review skill/command pattern similar to Conductor review for quality and evidence checks."
+}

@@ -1,0 +1,13 @@
+{
+  "track_id": "conductor-humanizer-templates_20260215",
+  "type": "feature",
+  "status": "blocked",
+  "priority": "P1",
+  "depends_on": ["reasoning-stream-implementation_20260215", "conductor-review-skill_20260215"],
+  "blocked_by": "reasoning-stream-implementation (stream must exist), conductor-review-skill (review integration)",
+  "parallel_safe": false,
+  "estimated_complexity": "low",
+  "created_at": "2026-02-15T05:14:47Z",
+  "updated_at": "2026-02-15T05:14:47Z",
+  "description": "Create conductor-compatible Humanizer template tracks/workflows with regular/pro styles, reasoning stream, and review skill options."
+}

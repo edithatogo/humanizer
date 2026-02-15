@@ -1,0 +1,12 @@
+{
+  "track_id": "reasoning-failures-stream_20260215",
+  "type": "feature",
+  "status": "new",
+  "priority": "P0",
+  "depends_on": [],
+  "parallel_safe": false,
+  "estimated_complexity": "high",
+  "created_at": "2026-02-15T05:06:33Z",
+  "updated_at": "2026-02-15T05:06:33Z",
+  "description": "Add a new Humanizer stream on LLM reasoning failures with source archiving, evidence cataloging, repo integration, and Wikipedia update workflow."
+}
