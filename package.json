@@ -1,5 +1,5 @@
 {
-  "name": "humanizer",
+  "name": "humanizer-next",
   "version": "2.3.0",
   "description": "Remove signs of AI-generated writing from text.",
   "type": "module",
