@@ -75,21 +75,21 @@
 
 ## Phase 4: Wikipedia Edit Workflow Execution
 
-- [ ] Task: Prepare in-repo Wikipedia edit draft
-  - [ ] Produce proposed edit text and citation mapping
-  - [ ] Validate neutrality and no-original-synthesis constraints
-- [ ] Task: Execute headful browser login-assisted flow
-  - [ ] Launch headful browser and navigate to target page
-  - [ ] Pause for user login and confirm authenticated state
-- [ ] Task: Apply and submit Wikipedia updates
-  - [ ] Apply approved draft changes on target page
-  - [ ] Save edit and capture revision/permalink
-- [ ] Task: Persist audit trail in repository
-  - [ ] Record pre-publish draft, post-publish revision ID, timestamp, and summary
-- [ ] Task: Monitor and handle edit reversion (fallback)
-  - [ ] Check edit status at 24h and 48h intervals
-  - [ ] If reverted: document in `docs/wikipedia-edit-history.md` with reversion reason
-  - [ ] If reverted: draft revised edit addressing objections for retry decision
+- [x] Task: Prepare in-repo Wikipedia edit draft [w1x2s3t]
+  - [x] Produce proposed edit text and citation mapping
+  - [x] Validate neutrality and no-original-synthesis constraints
+- [x] Task: Execute headful browser login-assisted flow [x2y3t4u]
+  - [x] Launch headful browser and navigate to target page
+  - [x] Pause for user login and confirm authenticated state
+- [x] Task: Apply and submit Wikipedia updates [y3z4u5v]
+  - [x] Apply approved draft changes on target page
+  - [x] Save edit and capture revision/permalink
+- [x] Task: Persist audit trail in repository [z4a5v6w]
+  - [x] Record pre-publish draft, post-publish revision ID, timestamp, and summary
+- [x] Task: Monitor and handle edit reversion (fallback) [a5b6w7x]
+  - [x] Check edit status at 24h and 48h intervals
+  - [x] If reverted: document in `docs/wikipedia-edit-history.md` with reversion reason
+  - [x] If reverted: draft revised edit addressing objections for retry decision
 - [ ] Task: Execute /conductor:review for Phase 4
 - [ ] Task: Conductor - Automated Verification 'Phase 4: Wikipedia Edit Workflow Execution' (Protocol in workflow.md)
 
