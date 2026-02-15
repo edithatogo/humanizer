@@ -8,7 +8,8 @@ description: |
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
   parallelisms, and excessive conjunctive phrases. Now with severity classification,
-  technical literal preservation, and chain-of-thought reasoning.
+  technical literal preservation, and chain-of-thought reasoning. Includes reasoning
+  failure detection and remediation.
 <<<<[CORE_FRONTMATTER]>>>>
 ---
 

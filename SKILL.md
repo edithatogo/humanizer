@@ -8,7 +8,8 @@ description: |
   inflated symbolism, promotional language, superficial -ing analyses, vague
   attributions, em dash overuse, rule of three, AI vocabulary words, negative
   parallelisms, and excessive conjunctive phrases. Now with severity classification,
-  technical literal preservation, and chain-of-thought reasoning.
+  technical literal preservation, and chain-of-thought reasoning. Includes reasoning
+  failure detection and remediation.
 allowed-tools:
   - Read
   - Write
@@ -679,6 +680,149 @@ Provide:
 - Used simple sentence structures and concrete examples
 
 ---
+
+## REASONING FAILURE PATTERNS
+
+### 27. Depth-Dependent Reasoning Failures
+
+**Problem:** LLMs exhibit degraded performance as reasoning depth increases.
+
+**Signs:** 
+- Overly complex explanations that lose focus
+- Tangential discussions that don't connect back to the main point
+- Accuracy decreases as reasoning chain lengthens
+
+**Before:**
+
+> The implementation of the new system requires a comprehensive understanding of the underlying architecture, which involves multiple layers of abstraction that must be carefully considered. The first layer deals with data input, which connects to the second layer that handles processing, which then connects to the third layer that manages output, and finally to the fourth layer that ensures security, all of which must work together seamlessly to achieve optimal performance.
+
+**After:**
+
+> The new system has four layers: data input, processing, output, and security. These layers work together to ensure optimal performance.
+
+### 28. Context-Switching Failures
+
+**Problem:** LLMs have difficulty maintaining coherence when switching between different domains or contexts.
+
+**Signs:**
+- Abrupt topic changes without proper transitions
+- Mixing formal and informal registers inappropriately
+- Difficulty maintaining coherence across different knowledge domains
+
+**Before:**
+
+> The economic impact of climate change is significant. Like, really huge. You know, companies are losing money left and right. CEOs are worried sick. Stock prices are dropping. Markets are unstable. Investors are panicking. It's just crazy out there.
+
+**After:**
+
+> Climate change has a significant economic impact. Companies face losses due to extreme weather events, supply chain disruptions, and changing consumer demands. These factors affect stock prices, market stability, and investor confidence.
+
+### 29. Temporal Reasoning Limitations
+
+**Problem:** LLMs struggle with reasoning about time, sequences, or causality.
+
+**Signs:**
+- Confusing chronological order
+- Unclear cause-and-effect relationships
+- Errors in temporal sequence or causal reasoning tasks
+
+**Before:**
+
+> The company launched its new product in 2020, which led to increased revenue in 2019. This success prompted the expansion in 2018.
+
+**After:**
+
+> The company expanded in 2018, which led to increased revenue in 2019. This success prompted the launch of a new product in 2020.
+
+### 30. Abstraction-Level Mismatches
+
+**Problem:** LLMs have difficulty shifting between different levels of abstraction.
+
+**Signs:**
+- Jumping suddenly from concrete examples to abstract concepts without connection
+- Difficulty maintaining appropriate level of abstraction
+- Inability to bridge abstraction gaps with clear connections
+
+**Before:**
+
+> The software architecture follows best practices. For example, the database stores user information. This creates a robust system. The API handles requests. The UI displays data. These components work together through complex interactions that ensure scalability.
+
+**After:**
+
+> The software architecture follows best practices. The database stores user information, the API handles requests, and the UI displays data. These components work together to create a robust and scalable system.
+
+### 31. Logical Fallacy Susceptibility
+
+**Problem:** LLMs tend to make specific types of logical errors.
+
+**Signs:**
+- Circular reasoning
+- False dichotomies
+- Hasty generalizations
+- Affirming the consequent
+- Systematic reasoning errors that contradict formal logic
+
+**Before:**
+
+> Many successful entrepreneurs dropped out of college, so dropping out of college will make you successful.
+
+**After:**
+
+> Some successful entrepreneurs dropped out of college, but success depends on many factors beyond education level.
+
+### 32. Quantitative Reasoning Deficits
+
+**Problem:** LLMs fail in numerical or quantitative reasoning.
+
+**Signs:**
+- Arithmetic errors
+- Misunderstanding of probabilities
+- Scale misjudgments
+- Inaccurate statistics
+- Misleading numerical comparisons
+
+**Before:**
+
+> The company's revenue increased from 1 million to 2 million, which represents a 50% increase.
+
+**After:**
+
+> The company's revenue increased from 1 million to 2 million, which represents a 100% increase.
+
+### 33. Self-Consistency Failures
+
+**Problem:** LLMs fail to maintain consistent reasoning within a single response.
+
+**Signs:**
+- Contradictory statements within the same response
+- Changing positions mid-response
+- Internal contradictions within a single output
+
+**Before:**
+
+> The project will be completed in 6 months. The timeline is very aggressive and will likely take at least a year to finish properly.
+
+**After:**
+
+> The project has an aggressive timeline of 6 months, though some experts estimate it would take closer to a year for optimal completion.
+
+### 34. Verification and Checking Deficiencies
+
+**Problem:** LLMs fail to adequately verify reasoning steps or final answers.
+
+**Signs:**
+- Providing incorrect answers without self-correction
+- Accepting obviously wrong intermediate steps
+- Lack of internal verification mechanisms
+- Presenting uncertain information as definitive
+
+**Before:**
+
+> The capital of Australia is Sydney. This is definitely correct.
+
+**After:**
+
+> The capital of Australia is Canberra. (Note: This corrects the common misconception that Sydney is the capital.)
 
 ## Reference
 

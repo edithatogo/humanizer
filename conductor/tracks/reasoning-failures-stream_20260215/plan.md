@@ -53,21 +53,21 @@
 
 ## Phase 3: Repo Documentation and Skill-Stream Integration
 
-- [ ] Task: Add dedicated LLM reasoning failures documentation page(s)
-  - [ ] Create/update docs with citations mapped to claims
-  - [ ] Ensure consistency with repository style and structure
-- [ ] Task: Add editorial policy boundary
-  - [ ] Document distinction between humanization patterns and reasoning diagnostics
-  - [ ] Reference policy from relevant docs/skill entry points
-- [ ] Task: Implement separate reasoning-focused module/skill stream
-  - [ ] Add new source fragments/files under `src/` (or equivalent modular location)
-  - [ ] Wire output generation so existing workflow remains stable
-- [ ] Task: Update compiled outputs/adapters as required
-  - [ ] Run sync/build workflow
-  - [ ] Verify adapters include intended reasoning stream references
-- [ ] Task: Add regression and compatibility tests
-  - [ ] Write failing tests for no-regression behavior in existing humanizer outputs
-  - [ ] Implement fixes until tests pass
+- [x] Task: Add dedicated LLM reasoning failures documentation page(s) [q5r6m7n]
+  - [x] Create/update docs with citations mapped to claims
+  - [x] Ensure consistency with repository style and structure
+- [x] Task: Add editorial policy boundary [r6s7n8o]
+  - [x] Document distinction between humanization patterns and reasoning diagnostics
+  - [x] Reference policy from relevant docs/skill entry points
+- [x] Task: Implement separate reasoning-focused module/skill stream [s7t8o9p]
+  - [x] Add new source fragments/files under `src/` (or equivalent modular location)
+  - [x] Wire output generation so existing workflow remains stable
+- [x] Task: Update compiled outputs/adapters as required [t8u9p0q]
+  - [x] Run sync/build workflow
+  - [x] Verify adapters include intended reasoning stream references
+- [x] Task: Add regression and compatibility tests [u9v0q1r]
+  - [x] Write failing tests for no-regression behavior in existing humanizer outputs
+  - [x] Implement fixes until tests pass
 - [ ] Task: Execute /conductor:review for Phase 3
 - [ ] Task: Conductor - Automated Verification 'Phase 3: Repo Documentation and Skill-Stream Integration' (Protocol in workflow.md)
 

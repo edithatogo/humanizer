@@ -26,6 +26,7 @@ This professional variant supports module-aware routing and bundled distribution
 - [Technical Module](modules/SKILL_TECHNICAL.md) - Apply for code and technical documentation.
 - [Academic Module](modules/SKILL_ACADEMIC.md) - Apply for papers, essays, and formal research prose.
 - [Governance Module](modules/SKILL_GOVERNANCE.md) - Apply for policy, risk, and compliance writing.
+- [Reasoning Module](modules/SKILL_REASONING.md) - Apply for identifying and addressing LLM reasoning failures.
 
 ## ROUTING LOGIC
 
