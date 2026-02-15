@@ -6,6 +6,12 @@ repos:
         entry: vale
         language: system
         types: [markdown, text]
+      - id: validate-manifest
+        name: validate-manifest
+        entry: bash scripts/validate-manifest.sh
+        language: system
+        files: archive/sources_manifest\.json$
+        pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

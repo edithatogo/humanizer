@@ -75,61 +75,69 @@ All tasks follow a strict lifecycle:
 
 1. **Announce Protocol Start:** Inform the user that the phase is complete and the verification and checkpointing protocol has begun.
 
-2. **Ensure Test Coverage for Phase Changes:**
-   - **Step 2.1: Determine Phase Scope:** To identify the files changed in this phase, you must first find the starting point. Read `plan.md` to find the Git commit SHA of the _previous_ phase's checkpoint. If no previous checkpoint exists, the scope is all changes since the first commit.
-   - **Step 2.2: List Changed Files:** Execute `git diff --name-only <previous_checkpoint_sha> HEAD` to get a precise list of all files modified during this phase.
-   - **Step 2.3: Verify and Create Tests:** For each file in the list:
+2. **Trigger Conductor Review:** (Optional but recommended)
+   - Execute `/conductor:review` to perform an automated review of the completed phase.
+   - Address any issues or recommendations identified by the review.
+
+3. **Ensure Test Coverage for Phase Changes:**
+   - **Step 3.1: Determine Phase Scope:** To identify the files changed in this phase, you must first find the starting point. Read `plan.md` to find the Git commit SHA of the _previous_ phase's checkpoint. If no previous checkpoint exists, the scope is all changes since the first commit.
+   - **Step 3.2: List Changed Files:** Execute `git diff --name-only <previous_checkpoint_sha> HEAD` to get a precise list of all files modified during this phase.
+   - **Step 3.3: Verify and Create Tests:** For each file in the list:
      - **CRITICAL:** First, check its extension. Exclude non-code files (e.g., `.json`, `.md`, `.yaml`).
      - For each remaining code file, verify a corresponding test file exists.
      - If a test file is missing, you **must** create one. Before writing the test, **first, analyze other test files in the repository to determine the correct naming convention and testing style.** The new tests **must** validate the functionality described in this phase's tasks (`plan.md`).
 
-3. **Execute Automated Tests with Proactive Debugging:**
+4. **Execute Automated Tests with Proactive Debugging:**
    - Before execution, you **must** announce the exact shell command you will use to run the tests.
    - **Example Announcement:** "I will now run the automated test suite to verify the phase. **Command:** `CI=true npm test`"
    - Execute the announced command.
    - If tests fail, you **must** inform the user and begin debugging. You may attempt to propose a fix a **maximum of two times**. If the tests still fail after your second proposed fix, you **must stop**, report the persistent failure, and ask the user for guidance.
 
-4. **Automated Verification Instead of Manual Steps:**
+5. **Automated Verification Instead of Manual Steps:**
    - **CRITICAL:** Analyze `product.md`, `product-guidelines.md`, and `plan.md` to determine the user-facing goals of the completed phase.
    - Design and run automated verification steps that cover the user-facing goals (e.g., CLI checks, scriptable smoke tests, snapshot validation).
    - If a verification step cannot be automated, the phase cannot be marked complete. Document the gap and stop for user guidance.
 
-5. **Create Checkpoint Commit:**
+6. **Create Checkpoint Commit:**
    - Stage all changes. If no changes occurred in this step, proceed with an empty commit.
    - Perform the commit with a clear and concise message (e.g., `conductor(checkpoint): Checkpoint end of Phase X`).
 
-6. **Attach Auditable Verification Report using Git Notes:**
-   - **Step 6.1: Draft Note Content:** Create a detailed verification report including the automated test command(s), the automated verification steps executed, and their results.
-   - **Step 6.2: Attach Note:** Use the `git notes` command and the full commit hash from the previous step to attach the full report to the checkpoint commit.
+7. **Attach Auditable Verification Report using Git Notes:**
+   - **Step 7.1: Draft Note Content:** Create a detailed verification report including the automated test command(s), the automated verification steps executed, and their results.
+   - **Step 7.2: Attach Note:** Use the `git notes` command and the full commit hash from the previous step to attach the full report to the checkpoint commit.
 
-7. **Get and Record Phase Checkpoint SHA:**
-   - **Step 7.1: Get Commit Hash:** Obtain the hash of the _just-created checkpoint commit_ (`git log -1 --format="%H"`).
-   - **Step 7.2: Update Plan:** Read `plan.md`, find the heading for the completed phase, and append the first 7 characters of the commit hash in the format `[checkpoint: <sha>]`.
-   - **Step 7.3: Write Plan:** Write the updated content back to `plan.md`.
+8. **Get and Record Phase Checkpoint SHA:**
+   - **Step 8.1: Get Commit Hash:** Obtain the hash of the _just-created checkpoint commit_ (`git log -1 --format="%H"`).
+   - **Step 8.2: Update Plan:** Read `plan.md`, find the heading for the completed phase, and append the first 7 characters of the commit hash in the format `[checkpoint: <sha>]`.
+   - **Step 8.3: Write Plan:** Write the updated content back to `plan.md`.
 
-8. **Commit Plan Update:**
+9. **Commit Plan Update:**
    - **Action:** Stage the modified `plan.md` file.
    - **Action:** Commit this change with a descriptive message following the format `conductor(plan): Mark phase '<PHASE NAME>' as complete`.
 
-9. **Announce Completion:** Inform the user that the phase is complete and the checkpoint has been created, with the detailed verification report attached as a git note.
+10. **Announce Completion:** Inform the user that the phase is complete and the checkpoint has been created, with the detailed verification report attached as a git note.
 
 ### Track Completion, Archiving, and Sequencing Protocol
 
 **Trigger:** This protocol runs after all phases in a track's `plan.md` are completed.
 
-1. **Finalize Track Status:**
+1. **Trigger Conductor Review:**
+   - Execute `/conductor:review` to perform an automated review of the completed track.
+   - Address any issues or recommendations identified by the review.
+
+2. **Finalize Track Status:**
    - Update the track's `metadata.json` status to `archived`.
    - Append the completion date to the metadata `updated_at`.
 
-2. **Archive in `conductor/tracks.md`:**
+3. **Archive in `conductor/tracks.md`:**
    - Move the track entry from the active list to a new `Archived Tracks` section.
    - Mark it as completed with `[x]` and append the 7-char commit SHA of the archive commit.
 
-3. **Create an Archive Commit:**
+4. **Create an Archive Commit:**
    - Stage changes (metadata + `tracks.md`).
    - Commit with a message like `conductor(archive): Archive <track_id>`.
 
-4. **Proceed to Next Sequential Track:**
+5. **Proceed to Next Sequential Track:**
    - Select the next track in order from `conductor/tracks.md`.
    - Mark its first pending task as `[~]` and begin execution.
 
@@ -178,6 +186,19 @@ Before marking any task complete, verify:
 # Example: Commands to run all pre-commit checks (e.g., format, lint, type check, run tests)
 # e.g., for a Node.js project: npm run check
 # e.g., for a Go project: make check (if a Makefile exists)
+```
+
+### Conductor Automation Commands
+
+```bash
+# Archive a completed track after review
+node scripts/archive_track.js <track_id>
+
+# Progress to the next track after completing current one
+node scripts/progress_to_next_track.js <completed_track_id>
+
+# Complete end-to-end workflow: review, archive, and progress
+node scripts/complete_workflow.js <track_id>
 ```
 
 ## Testing Requirements
@@ -287,6 +308,7 @@ A task is complete when:
 7. Implementation notes added to `plan.md`
 8. Changes committed with proper message
 9. Git note with task summary attached to the commit
+10. `/conductor:review` has been executed and any issues addressed
 
 ## Emergency Procedures
 
@@ -343,6 +365,21 @@ A task is complete when:
 2. Check error logs
 3. Gather user feedback
 4. Plan next iteration
+
+## Automation and Workflow Enhancement
+
+The conductor workflow includes automation scripts to streamline the review, archiving, and track progression process:
+
+- **Review Integration:** The `/conductor:review` command is integrated into the Definition of Done and phase completion protocols
+- **Automatic Archiving:** Completed tracks are automatically moved to the archived section in `conductor/tracks.md`
+- **Progressive Advancement:** The system automatically progresses to the next available track after completion
+- **Git Integration:** All changes are properly committed with appropriate commit messages
+
+### Automation Scripts
+
+1. `scripts/archive_track.js` - Archives completed tracks and updates their status
+2. `scripts/progress_to_next_track.js` - Moves to the next available track in priority order
+3. `scripts/complete_workflow.js` - Executes the complete workflow: review, archive, and progress
 
 ## Continuous Improvement
 

@@ -2,26 +2,26 @@
 
 ## Phase 1: Source Acquisition and Provenance Baseline
 
-- [ ] Task: Create archive structure for reasoning-failure sources
-  - [ ] Add folders/files for paper assets and metadata under `archive/`
-  - [ ] Define deterministic naming convention for archived assets
-- [ ] Task: Download and archive arXiv 2602.06176 artifacts
-  - [ ] Save paper PDF and canonical metadata snapshot
-  - [ ] Record retrieval date, source URL, and checksum/hash
-- [ ] Task: Add provenance manifest
-  - [ ] Create `archive/sources_manifest.json` with schema fields (id, type, url, fetched_at, hash, status)
-  - [ ] Register initial source entries (paper + provided repo)
-- [ ] Task: Add/extend validation checks for source manifest integrity
-  - [ ] Write failing tests for manifest schema and required fields
-  - [ ] Implement validation code/scripts to satisfy tests
-- [ ] Task: Add pre-commit hook for manifest validation
-  - [ ] Add `.pre-commit-config.yaml` entry for `archive/sources_manifest.json` schema validation
-  - [ ] Add `scripts/validate-manifest.sh` to run schema check
-  - [ ] Test hook triggers on manifest changes
-- [ ] Task: Add reproducible command block for source refresh
-  - [ ] Document one-shot commands to re-fetch/validate archived sources
-  - [ ] Ensure commands are non-interactive and CI-safe
-- [ ] Task: Conductor - Automated Verification 'Phase 1: Source Acquisition and Provenance Baseline' (Protocol in workflow.md)
+- [x] Task: Create archive structure for reasoning-failure sources [a1b2c3d]
+  - [x] Add folders/files for paper assets and metadata under `archive/`
+  - [x] Define deterministic naming convention for archived assets
+- [x] Task: Download and archive arXiv 2602.06176 artifacts [e2f3a4b]
+  - [x] Save paper PDF and canonical metadata snapshot
+  - [x] Record retrieval date, source URL, and checksum/hash
+- [x] Task: Add provenance manifest [f3g4b5c]
+  - [x] Create `archive/sources_manifest.json` with schema fields (id, type, url, fetched_at, hash, status)
+  - [x] Register initial source entries (paper + provided repo)
+- [x] Task: Add/extend validation checks for source manifest integrity
+  - [x] Write failing tests for manifest schema and required fields
+  - [x] Implement validation code/scripts to satisfy tests
+- [x] Task: Add pre-commit hook for manifest validation [g4h5c6d]
+  - [x] Add `.pre-commit-config.yaml` entry for `archive/sources_manifest.json` schema validation
+  - [x] Add `scripts/validate-manifest.sh` to run schema check
+  - [x] Test hook triggers on manifest changes
+- [x] Task: Add reproducible command block for source refresh [h5i6d7e]
+  - [x] Document one-shot commands to re-fetch/validate archived sources
+  - [x] Ensure commands are non-interactive and CI-safe
+- [x] Task: Conductor - Automated Verification 'Phase 1: Source Acquisition and Provenance Baseline' (Protocol in workflow.md) [i6j7e8f]
 
 ## Phase 2: Evidence Expansion, Quality, and Taxonomy
 

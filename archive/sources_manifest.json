@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "arxiv_2602.06176",
+      "type": "paper",
+      "url": "https://arxiv.org/abs/2602.06176",
+      "fetched_at": "2026-02-15T00:00:00Z",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "archived",
+      "confidence": "high"
+    },
+    {
+      "id": "awesome_llm_reasoning_repo",
+      "type": "repo",
+      "url": "https://github.com/Peiyang-Song/Awesome-LLM-Reasoning-Failures",
+      "fetched_at": "",
+      "hash": "",
+      "status": "pending",
+      "confidence": "high"
+    }
+  ]
+}
